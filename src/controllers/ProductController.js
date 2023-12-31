@@ -74,7 +74,7 @@ module.exports = {
     try {
       const deletedProduct = await Product.findByIdAndDelete(id);
 
-      if (!this.deleteProduct) {
+      if (!deletedProduct) {
         return res.status(404).json({ message: "Product not found" });
       }
 
